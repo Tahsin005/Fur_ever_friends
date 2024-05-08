@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fur Ever Friends</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="bg-white"> 
+    <header>
+          
+          <nav>
+            <div class="navbar bg-base-100">
+              <div class="navbar-start">
+                <div class="dropdown">
+                  <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                  </div>
+                  <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="pets.html">Pets</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="add_pet.html">Add Pets</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="deposit.html">Deposit</a>
+                      </li>
+                  </ul>
+                </div>
+                <a href="index.html" class="btn btn-ghost text-xl">Fur Ever Friends</a>
+              </div>
+              <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 flex">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pets.html">Pets</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="add_pet.html">Add Pets</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="deposit.html">Deposit</a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div class="navbar-end gap-x-4">
+                <a id="login-button" class="btn pt-4" href="user_login.html">Login</a>
+                <a id="register-button" class="btn pt-4" href="user_registration.html">Registration</a>
+
+                <a id="profile-button" class="btn pt-4" href="user_account.html">Profile</a>
+
+                <button id="logout-button" class="btn " onclick="handleLogout()">Logout</button>
+               
+              </div>
+            </div>
+          </nav>
+          
+      </header>
+
+    <main>
+      <div class="carousel w-full">
+        <div id="slide1" class="carousel-item relative w-full">
+            <img src="images/tuki.jpg" class="w-full h-screen" alt="Tuki the cat">
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide2" class="btn btn-circle">❮</a>
+                <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-7xl font-bold bg-transparent mt-56">
+                Welcome to Fur Ever Friends!
+                <p> Adopt or list pets for adoption.</p>
+              </div>
+              
+            </div>
+            <div id="slide2" class="carousel-item relative w-full">
+            <img src="images/garfield.jpeg" class="w-full h-screen" alt="Garfield the cat">
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide1" class="btn btn-circle">❮</a>
+              <a href="#slide1" class="btn btn-circle">❯</a>
+            </div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-7xl font-bold bg-transparent mt-56">
+              Welcome to Fur Ever Friends! 
+              <p> Adopt or list pets for adoption.</p>
+            </div>
+        </div>
+      </div>
+    
+
+      <section class="bg-white w-[80%] mx-auto mb-8">
+        <div>
+          <h1 class="text-center text-5xl mt-4 text-black font-medium">PLANNING TO ADOPT A PET?</h1>
+        </div>
+        <div class=" grid grid-cols-3 gap-x-8 mt-10">
+          <div class="p-10 border-2 text-center rounded-xl">
+            <img class="flex justify-center align-center mx-auto" src="images/Dog Portrait.svg" alt="">
+            <h2 class="font-medium">PET ADOPTION FAQS</h2>
+            <p class="font-medium">Get answer to all the you questions you haven't
+              thought of for your adoption-</p>
+          </div>
+          <div class="p-10 border-2 text-center rounded-xl">
+            <img class="flex justify-center align-center mx-auto" src="images/Health Outline.svg" alt="">
+            <h2 class="font-medium">CHECKLIST FOR NEW ADOPTERS</h2>
+            <p class="font-medium">Make the adoption transition as smooth as
+              possible-</p>
+          </div>
+          <div class="p-10 border-2 text-center rounded-xl">
+            <img class="flex justify-center align-center mx-auto" src="images/Organization Outline.svg" alt="">
+            <h2 class="font-medium">PET ADOPTION FAQS</h2>
+            <p class="font-medium">Get answer to all the you questions you haven't
+              thought of for your adoption-</p>
+          </div>
+          
+
+        </div>
+      </section>
+
+      <section class="bg-gray-200 py-8">
+        <div class=" mx-auto ">
+          <div class="flex justify-center">
+            <div class="max-w-xl">
+              <div class="text-center mb-16">
+                <h1 class="text-center text-5xl mt-4 text-black font-medium">MEET THE PET</h1>
+                <h2 class="text-lg  text-gray-800 mt-2">PET WAITING FOR ADOPTION</h2>
+                <div class="dropdown mt-8">
+                  <label tabindex="0" class="btn m-1">Categories</label>
+                  <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-10 text-center">
+                    <div class="dropdown-menu  text-start" aria-labelledby="dropdownMenuButton" id="categories">
+                      <a class="dropdown-item ps-4" href="pets.html">All</a>
+  
+                    </div>
+                    <!-- Add more category list items here -->
+                  </ul>
+                </div>
+                
+                
+                
+              </div>
+            </div>
+          </div>
+          <div class="">
+
+            <div class="grid grid-cols-1 md:grid-cols-3  gap-x-8 gap-y-8 justify-center mt-14  w-[80%] mx-auto pb-8" id="pet-list-cards" id="pet-list-cards">
+              <!-- Pet cards will go here -->
+            </div>
+           
+            <div class="text-center" id="cards-nodata">
+              <img src="images/nodata.png" alt="">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+      
+
+
+
+      <section class="w-[80%] mx-auto">
+        <div>
+          <h1 class="text-center text-5xl mt-4 text-black font-medium">WHY CHOOSE US?</h1>
+          <div class="flex flex-col md:flex-row gap-x-8 mt-20 justify-center mx-auto">
+            <div class="card w-96 bg-white shadow-xl">
+              <figure class="px-10 pt-10">
+                <img class="h-40 w-40 rounded-full" src="images/OIG2.jpeg" alt="Shoes" class="rounded-xl" />
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 class="card-title">Expertise and Care</h2>
+                <p>We speak to every pet owner in detail about their pet before their listing is approved.</p>
+                <p>Our team of passionate animal lovers has years of experience in pet care and adoption</p>
+                
+              </div>
+            </div>
+            <div class="card w-96 bg-white shadow-xl">
+              <figure class="px-10 pt-10">
+                <img class="h-40 w-40 rounded-full" src="images/OIG2.Nt6rDkeTO5J.jpeg" alt="Shoes" class="rounded-xl" />
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 class="card-title">Comprehensive Adoption Process</h2>
+                <p>Adopting a pet is a lifelong commitment, and we take it seriously. Our thorough adoption process ensures that every pet finds the right home.</p>
+                <p>From health checks to behavioral assessments, we leave no stone unturned. When you choose us, you’re choosing a comprehensive and responsible adoption journey.</p>
+                
+              </div>
+            </div>
+            <div class="card w-96 bg-white shadow-xl">
+              <figure class="px-10 pt-10">
+                <img class="h-40 w-40 rounded-full" src="images/OIG2.cdcnW6yjB4b1FB.jpeg" alt="Shoes" class="rounded-xl" />
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 class="card-title">Community Impact</h2>
+                <p>By adopting from us, you’re not just gaining a furry companion—you’re making a positive impact on the community. </p>
+                <p>When you choose us, you’re choosing to be part of something bigger.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      
+    </main>
+    
+    
+    
+    <footer>
+      
+    </footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <!-- scrip tags  -->
+    <script src="js/app.js"></script>
+    <script src="js/pets.js"></script>
+    <script src="js/logout.js"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+  </html>

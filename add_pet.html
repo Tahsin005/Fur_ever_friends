@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fur Ever Friends</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              </div>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pets.html">Pets</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="add_pet.html">Add Pets</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="deposit.html">Deposit</a>
+                  </li>
+              </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl">Fur Ever Friends</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 flex">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pets.html">Pets</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="add_pet.html">Add Pets</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="deposit.html">Deposit</a>
+                </li>
+              
+            </ul>
+          </div>
+          <div class="navbar-end gap-x-4">
+            <a id="login-button" class="btn pt-4" href="user_login.html">Login</a>
+            <a id="register-button" class="btn pt-4" href="user_registration.html">Registration</a>
+
+            <a id="profile-button" class="btn pt-4" href="user_account.html">Profile</a>
+
+            <button id="logout-button" class="btn pt-4" onclick="handleLogout()">Logout</button>
+           
+          </div>
+        </div>
+      </nav>
+
+          
+    </header>
+
+    <main>
+        <div class="mx-auto mt-20 max-w-md">
+          <div class="text-center mb-16">
+              <h1 class="text-5xl mt-4 text-white font-medium mb-4">ADD PET</h1>
+              <form method="POST" enctype="multipart/form-data">
+                  <div class="mb-4">
+                      <label for="name" class="block text-sm font-medium text-white">Name</label>
+                      <input type="text" id="name" name="name" required class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                  </div>
+                  <div class="mb-4">
+                      <label for="description" class="block text-sm font-medium text-white">Description</label>
+                      <textarea id="description" name="description" rows="3" required class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+                  </div>
+                  <div class="mb-4">
+                      <label for="image" class="block text-sm font-medium text-white">Image</label>
+                      <input type="file" id="image" name="image" required class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                  </div>
+                  <div class="mb-4">
+                      <label for="price" class="block text-sm font-medium text-white">Price</label>
+                      <input type="number" id="price" name="price" required class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                  </div>
+                  <div class="mb-4">
+                      <label for="categories" class="block text-sm font-medium text-white">Categories</label>
+                      <select id="categories" name="categories" required class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                          <option value="" selected>Select</option>
+                          <!-- Add more category options here -->
+                      </select>
+                  </div>
+                  <button onclick="addPet(event)" type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50">Submit</button>
+              </form>
+          </div>
+      </div>
+      
+        
+    </main>
+
+
+
+    <footer>
+
+    </footer>
+
+
+
+
+
+
+    <!-- scrip tags  -->
+    <script src="js/add_pet.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/logout.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
