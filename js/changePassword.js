@@ -17,6 +17,7 @@ const changePassword = (event) => {
                 })
                     .then((response) => {
                         if (response.status === 200) {
+                            alert("Password changed successfully")
                             window.location.href = "user_account.html";
                         } else {
                             console.log("Password Changing failed with status code:", response.status);
