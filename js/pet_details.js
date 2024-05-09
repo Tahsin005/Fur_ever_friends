@@ -47,11 +47,11 @@ const loadBalance = async () => {
         const response = await fetch(`https://fur-ever-friends-backend.onrender.com/user/account/${new_id}/`);
         const data = await response.json();
         const x = data.balance;
-
+        clg("my balance", x);
         const petResponse = await fetch(`https://fur-ever-friends-backend.onrender.com/pet/list/${pet_id}/`);
         const petdata = await petResponse.json();
         const pet_price = petdata.price;
-
+        clg("my pet price", pet_price);
         if (pet_price > x) {
             alert("Not enough money to adopt this cat");
             window.location.href = "deposit.html";
