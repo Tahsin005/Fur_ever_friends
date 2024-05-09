@@ -61,20 +61,6 @@ const loadBalance = async () => {
     }
 };
 
-    loadBalance();
-    fetch(`https://fur-ever-friends-backend.onrender.com/pet/adopt/`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ pet_id, user_id })
-    })
-    .then((response) => {
-        if (response.status == 200) {
-            window.location.href = "user_account.html";
-        } else {
-            console.log("");
-        }
-    })
-}
 const addReview = (event) => {
     event.preventDefault();
     const token = localStorage.getItem("furever_token");
