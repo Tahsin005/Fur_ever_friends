@@ -44,6 +44,13 @@ const adoptPet = async (event) => {
 
 const loadBalance = async () => {
     try {
+        const pet_id = getParams();
+
+        const user_id = localStorage.getItem("furever_user_id");
+        console.log("pet_id: " , pet_id);
+        console.log("uid lb ",user_id);
+        const new_id = user_id - 1;
+        console.log("new_id load balance: ", new_id);
         const response = await fetch(`https://fur-ever-friends-backend.onrender.com/user/account/${new_id}/`);
         const data = await response.json();
         const x = data.balance;
