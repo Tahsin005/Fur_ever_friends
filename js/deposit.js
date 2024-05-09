@@ -24,6 +24,7 @@ const handleDeposit = (event) => {
                 response.json();
             })
             .then((data) => {
+                alert(`You Have Successfully Deposited ${amount}$`)
                 window.location.href = "user_account.html"
             })
 

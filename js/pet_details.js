@@ -23,7 +23,7 @@ const adoptPet = (event) => {
     })
     .then((response) => {
         if (response.status == 200) {
-            alert()
+            alert("Adoption Successful")
             window.location.href = "user_account.html";
         } else {
             console.log("");
