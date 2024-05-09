@@ -15,7 +15,31 @@ const adoptPet = (event) => {
         window.location.href = "user_login.html";
     }
     const pet_id = getParams();
+
     const user_id = localStorage.getItem("furever_user_id");
+    console.log(user_id);
+    const new_id = user_id - 1;
+    console.log("new_id: " , new_id);
+    const loadBalance = () => {
+        fetch(`https://fur-ever-friends-backend.onrender.com/user/account/${new_id}/`)
+        .then((response) => response.json())
+        .then((data) => {
+            let x = data.balance;
+            // console.log("balance", x);
+            fetch(`https://fur-ever-friends-backend.onrender.com/pet/list/${pet_id}/`)
+            .then((res) => res.json())
+            .then((petdata) => {
+                // console.log(petdata);
+                let pet_price = petdata.price;
+                // console.log(pet_price);
+                if (pet_price > x) {
+                    alert("No enough money to adopt this cat")
+                    window.location.href = "deposit.html";
+                }
+            })
+        })
+    }
+    loadBalance();
     fetch(`https://fur-ever-friends-backend.onrender.com/pet/adopt/`, {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -23,7 +47,6 @@ const adoptPet = (event) => {
     })
     .then((response) => {
         if (response.status == 200) {
-            alert("Adoption Successful")
             window.location.href = "user_account.html";
         } else {
             console.log("");
