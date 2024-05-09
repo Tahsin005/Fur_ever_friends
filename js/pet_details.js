@@ -8,64 +8,67 @@ const getParams = () => {
     }
     return param
 }
-const adoptPet = async (event) => {
+const adoptPet = (event) => {
     event.preventDefault();
     const token = localStorage.getItem("furever_token");
     if (!token) {
         window.location.href = "user_login.html";
-        return; // Exit early if no token
+        return; // Return to prevent further execution if token is not present
     }
     const pet_id = getParams();
-
     const user_id = localStorage.getItem("furever_user_id");
-    console.log(user_id);
-    const new_id = user_id - 1;
-    console.log("new_id: ", new_id);
+    const furever_user_account = localStorage.getItem("furever_user_account");
+    console.log("user_id", user_id);
+    // Define loadBalance function to return a Promise
+    const loadBalance = () => {
+        return new Promise((resolve, reject) => {
+            fetch(`https://fur-ever-friends-backend.onrender.com/user/account/${furever_user_account}/`)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                let balance = data.balance;
+                console.log(("User balance: " + balance));
+                fetch(`https://fur-ever-friends-backend.onrender.com/pet/list/${pet_id}/`)
+                .then((res) => res.json())
+                .then((petdata) => {
+                    let pet_price = petdata.price;
+                    console.log(("Pet price: " + pet_price));
+                    if (pet_price > balance) {
+                        alert("Not enough money to adopt this pet");
+                        window.location.href = "deposit.html";
+                        reject("Not enough balance"); // Reject the promise if balance is not enough
+                    } else {
+                        resolve(); // Resolve the promise if balance is sufficient
+                    }
+                })
+            })
+            .catch((error) => {
+                console.error("Error in loadBalance:", error);
+                reject(error); // Reject the promise if there's an error
+            });
+        });
+    };
 
-    try {
-        await loadBalance(); // Wait for loadBalance to complete
-        // Rest of your code here
+    // Call loadBalance function and proceed only if it resolves
+    loadBalance().then(() => {
+        // Proceed with pet adoption if balance is sufficient
         fetch(`https://fur-ever-friends-backend.onrender.com/pet/adopt/`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ pet_id, user_id })
         })
         .then((response) => {
-            if (response.status === 200) {
+            if (response.status == 200) {
+                alert("Pet adopted")
                 window.location.href = "user_account.html";
             } else {
-                console.log("");
+                console.log("Error adopting pet");
             }
+        })
+        .catch((error) => {
+            console.error("Error adopting pet:", error);
         });
-    } catch (error) {
-        console.error("Error in loadBalance:", error);
-    }
-};
-
-const loadBalance = async () => {
-    try {
-        const pet_id = getParams();
-
-        const user_id = localStorage.getItem("furever_user_id");
-        console.log("pet_id: " , pet_id);
-        console.log("uid lb ",user_id);
-        const new_id = user_id - 1;
-        console.log("new_id load balance: ", new_id);
-        const response = await fetch(`https://fur-ever-friends-backend.onrender.com/user/account/${new_id}/`);
-        const data = await response.json();
-        const x = data.balance;
-        clg("my balance", x);
-        const petResponse = await fetch(`https://fur-ever-friends-backend.onrender.com/pet/list/${pet_id}/`);
-        const petdata = await petResponse.json();
-        const pet_price = petdata.price;
-        clg("my pet price", pet_price);
-        if (pet_price > x) {
-            alert("Not enough money to adopt this cat");
-            window.location.href = "deposit.html";
-        }
-    } catch (error) {
-        console.error("Error in loadBalance:", error);
-    }
+    });
 };
 
 const addReview = (event) => {

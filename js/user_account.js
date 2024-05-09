@@ -21,7 +21,8 @@ const loadAccount = () => {
     <div class="p-5">
         <div class="flex items-center">
             <div class="w-20 h-20 rounded-full overflow-hidden mr-4">
-            <img src="${account.image}" alt="Profile Picture" class="w-full h-full object-cover">
+            <img src="${account.image ? account.image : 'images/user.webp'}" alt="Profile Picture" class="w-full h-full object-cover">
+
             </div>
             <div>
                 <h5 class="text-xl font-semibold text-gray-800">${user.first_name} ${user.last_name}</h5>
