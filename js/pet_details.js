@@ -8,37 +8,59 @@ const getParams = () => {
     }
     return param
 }
-const adoptPet = (event) => {
+const adoptPet = async (event) => {
     event.preventDefault();
     const token = localStorage.getItem("furever_token");
     if (!token) {
         window.location.href = "user_login.html";
+        return; // Exit early if no token
     }
     const pet_id = getParams();
 
     const user_id = localStorage.getItem("furever_user_id");
     console.log(user_id);
     const new_id = user_id - 1;
-    console.log("new_id: " , new_id);
-    const loadBalance = () => {
-        fetch(`https://fur-ever-friends-backend.onrender.com/user/account/${new_id}/`)
-        .then((response) => response.json())
-        .then((data) => {
-            let x = data.balance;
-            // console.log("balance", x);
-            fetch(`https://fur-ever-friends-backend.onrender.com/pet/list/${pet_id}/`)
-            .then((res) => res.json())
-            .then((petdata) => {
-                // console.log(petdata);
-                let pet_price = petdata.price;
-                // console.log(pet_price);
-                if (pet_price > x) {
-                    alert("No enough money to adopt this cat")
-                    window.location.href = "deposit.html";
-                }
-            })
+    console.log("new_id: ", new_id);
+
+    try {
+        await loadBalance(); // Wait for loadBalance to complete
+        // Rest of your code here
+        fetch(`https://fur-ever-friends-backend.onrender.com/pet/adopt/`, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ pet_id, user_id })
         })
+        .then((response) => {
+            if (response.status === 200) {
+                window.location.href = "user_account.html";
+            } else {
+                console.log("");
+            }
+        });
+    } catch (error) {
+        console.error("Error in loadBalance:", error);
     }
+};
+
+const loadBalance = async () => {
+    try {
+        const response = await fetch(`https://fur-ever-friends-backend.onrender.com/user/account/${new_id}/`);
+        const data = await response.json();
+        const x = data.balance;
+
+        const petResponse = await fetch(`https://fur-ever-friends-backend.onrender.com/pet/list/${pet_id}/`);
+        const petdata = await petResponse.json();
+        const pet_price = petdata.price;
+
+        if (pet_price > x) {
+            alert("Not enough money to adopt this cat");
+            window.location.href = "deposit.html";
+        }
+    } catch (error) {
+        console.error("Error in loadBalance:", error);
+    }
+};
+
     loadBalance();
     fetch(`https://fur-ever-friends-backend.onrender.com/pet/adopt/`, {
         method: "POST",
