@@ -59,7 +59,7 @@ const displayPetByCategory = (data) => {
                                     `
                                     <div class="mt-8">
                                     <div class="bg-white rounded-lg shadow-md w-72">
-                                    <img src="${pet.image ? pet.images: 'images/tuki.jpg'}" alt="Pet Image" class="w-full h-48 object-cover rounded-t-lg">
+                                    <img src="${pet.image}" alt="Pet Image" class="w-full h-48 object-cover rounded-t-lg">
                                     <div class="p-4">
                                         <h4 class="text-lg font-semibold"><a href="pet_details.html?id=${pet.id}" class="text-indigo-600 hover:underline">${pet.name}</a></h4>
                                         <ul class="mt-2 space-y-1">
