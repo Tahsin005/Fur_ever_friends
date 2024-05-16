@@ -12,7 +12,7 @@ const handleRgistration = (event) => {
     const first_name = getValue("first_name")
     const last_name = getValue("last_name")
     const email = getValue("email")
-    const image = document.getElementById("image").files[0]
+    const image = document.getElementById("image").value
     const info = {username, first_name, last_name, email, password, confirm_password};
     console.log(info)
     if (password === confirm_password) {

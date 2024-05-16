@@ -27,7 +27,7 @@ const addPet = (event) => {
     }
     const name = getValue("name")
     const description = getValue("description")
-    const image = document.getElementById("image").files[0]
+    const image = document.getElementById("image").value;
     const price = parseInt(getValue("price"))
     const adopter = ''
     const added_by = parseInt(localStorage.getItem('furever_user_id'))
