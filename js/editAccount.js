@@ -58,7 +58,7 @@ const editAccount = async (event) => {
         const data = await response.json();
         console.log('Account updated:', data);
         alert("Account updated")
-        // window.location.href = "user_account.html";
+        window.location.href = "user_account.html";
     } catch (error) {
         console.log('Error updating account:', error);
     }
