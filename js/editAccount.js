@@ -47,6 +47,8 @@ const editAccount = async (event) => {
     const imageInput = document.getElementById('image').value;
     if (imageInput) {
         formData.append('image', imageInput);
+    } else {
+        alert('Please input the image url');
     }
     try {
         const response = await fetch(`https://fur-ever-friends-backend.onrender.com/user/update/${user_id}/`, {
