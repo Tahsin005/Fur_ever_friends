@@ -16,6 +16,27 @@ Fur Ever Friends is your go-to pet adoption website where users can adopt pets a
 **Backend:** Django REST API, PostgreSQL
 
 
+## Installation
+
+### Prerequisites
+    . Web browser (Chrome, Firefox, Safari, etc.)
+    . Code editor (VSCode, Sublime Text, etc.) - optional for development
+### Steps
+
+ Clone this repository:
+
+```bash
+  git clone https://github.com/Tahsin005/Fur_ever_friends
+  cd Fur_ever_friends
+
+```
+    
+Open the project in your preferred code editor or directly in your file explorer.
+
+Open index.html in your web browser to view the site.
+
+For development, you can use a live server extension in your code editor to automatically reload the page on changes.
+
 ## Live Link
 
 https://fur-ever-friends-chi.vercel.app/index.html
