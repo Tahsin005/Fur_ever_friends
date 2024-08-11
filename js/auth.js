@@ -33,6 +33,8 @@ const handleRgistration = (event) => {
                         .then((response) => {
                             if (response.status === 200) {
                                 alert("Registration Successfull.");
+                                window.location.href = "user_login.html";
+
                                 console.log(response.statusText);
                             } else {
                                 console.log("Registration failed with status code:", response.status);
@@ -84,7 +86,7 @@ const handleLogin = (event) => {
                                 localStorage.setItem("furever_user_account", data[x - 1].id);
                                 const user_account = localStorage.getItem("furever_user_account")
                                 // console.log("Mewo", user_account);
-                                // window.location.href = "index.html";
+                                window.location.href = "index.html";
                             }
                         })
                 }
