@@ -67,7 +67,7 @@ const displayPetByCategory = (data) => {
                                         <li class="text-gray-600">Price: <span>${(pet.price == 0) ? 'Free' : pet.price}</span></li>
                                         </ul>
                                         <div class="mt-4">
-                                        <a href="pet_details.html?id=${pet.id}" class="text-indigo-600 hover:underline">Details</a>
+                                        <a href="pet_details.html?id=${pet.id}" class="text-white px-4 py-2 rounded-md hover:underline bg-gray-500 ">Details</a>
                                         </div>
                                     </div>
                                 </div>
