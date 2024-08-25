@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cupcake">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="bg-white"> 
-    <header>
+    <header class="mb-4">
           
       <nav>
         <div class="navbar bg-stone-100">
@@ -67,34 +67,55 @@
       </header>
 
     <main>
-      <div class="carousel w-full">
-        <div id="slide1" class="carousel-item relative w-full">
-            <img src="images/tuki.jpg" class="w-full h-screen" alt="Tuki the cat">
+      <div class="carousel w-full overflow-x-auto overflow-y-hidden" id="carousel_">
+        <!-- slide 1 -->
+        <div id="slide1" class="carousel-item relative w-full h-auto">
+
+            <div class="testing flex  flex-col md:flex-row md:px-24  md:w-full md:h-[512px] justify-around gap-10">
+                <!-- text -->
+                <div class=" md:pt-24 md:w-2/3 text-center lg:text-start md:ps-12 flex-grow mt-28 md:mt-10">
+                    <h2 class="text-3xl md:text-4xl lg:text-6xl font-bold ">Welcome to Fur Ever Friends!</h2>
+                    <p> Adopt or list pets for adoption.</p>
+                </div>
+
+                <!-- img -->
+                <div class="  items-end text-center lg:text-end mt-auto">
+                    <img class=" rounded-lg h-auto" src="./images/tuki.jpg" class="w-full" />
+                </div>
+            </div>
+
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide2" class="btn btn-circle">❮</a>
+                <a href="#slide1" class="btn btn-circle">❮</a>
                 <a href="#slide2" class="btn btn-circle">❯</a>
             </div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-7xl font-bold bg-transparent mt-56">
-                Welcome to Fur Ever Friends!
-                <p> Adopt or list pets for adoption.</p>
-              </div>
-              
-            </div>
-            <div id="slide2" class="carousel-item relative w-full">
-            <img src="images/garfield.jpeg" class="w-full h-screen" alt="Garfield the cat">
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" class="btn btn-circle">❮</a>
-              <a href="#slide1" class="btn btn-circle">❯</a>
-            </div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-7xl font-bold bg-transparent mt-56">
-              Welcome to Fur Ever Friends! 
-              <p> Adopt or list pets for adoption.</p>
-            </div>
         </div>
-      </div>
+
+        <!-- slide 2 -->
+        <div id="slide2" class="carousel-item relative w-full h-auto">
+
+            <div class="testing flex  flex-col md:flex-row md:px-24  md:w-full md:h-[512px] justify-around gap-10">
+              <!-- text -->
+              <div class=" md:pt-24 md:w-2/3 text-center lg:text-start md:ps-12 flex-grow mt-28 md:mt-10">
+                <h2 class="text-3xl md:text-4xl lg:text-6xl font-bold ">Welcome to Fur Ever Friends!</h2>
+                <p> Adopt or list pets for adoption.</p>
+            </div>
+              <!-- img -->
+              <div class="  items-end text-center lg:text-end mt-auto">
+                  <img class=" rounded-lg h-auto" src="./images/kitty-cat-kitten-pet-45201.jpeg" class="w-full" />
+              </div>
+          </div>
+
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide2" class="btn btn-circle">❮</a>
+              <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+  
+
+    </div>
     
 
-      <section class="bg-white w-[80%] mx-auto mb-8">
+      <section class="bg-white w-[80%] mx-auto mt-12 mb-8">
         <div>
           <h1 class="text-center text-5xl mt-4 text-black font-medium">PLANNING TO ADOPT A PET?</h1>
         </div>
@@ -127,7 +148,7 @@
           <div class="flex justify-center">
             <div class="max-w-xl">
               <div class="text-center mb-16">
-                <h1 class="text-center text-5xl mt-4 text-black font-medium">MEET THE PET</h1>
+                <h1 class="text-center text-5xl mt-4 text-black font-medium">Recommended For You..</h1>
                 <h2 class="text-lg  text-gray-800 mt-2">PET WAITING FOR ADOPTION</h2>
                 <div class="dropdown mt-8">
                   <label tabindex="0" class="btn m-1">Categories</label>

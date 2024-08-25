@@ -151,7 +151,7 @@ const handlePetDetails = async () => {
                                                     ${pet.adopter != null ? `
                                                     <button class="btn btn-warning"><a>Alredy Adopted</a></button>` : `
                                                 
-                                                <button onclick="adoptPet(event)" class="btn btn-primary"><a>Adopt Now</a></button>
+                                                <button onclick="adoptPet(event)" class="btn "><a>Adopt Now</a></button>
                                                 `}
                                                 </div>
                                             </div>
@@ -173,8 +173,8 @@ const handlePetDetails = async () => {
                                                   
                                                   <p>${pet.description}</p>
                                                   <div class="card-actions justify-end">
-                                                    <button class="btn btn-primary">Pet ID: ${pet.id}</button>
-                                                    <button class="btn btn-primary">Price: <span>${(pet.price == 0) ? `Free` : pet.price}</span></button>
+                                                    <button class="btn ">Pet ID: ${pet.id}</button>
+                                                    <button class="btn b">Price: <span>${(pet.price == 0) ? `Free` : pet.price}</span></button>
                                                   </div>
                                                 </div>
                                               </div>

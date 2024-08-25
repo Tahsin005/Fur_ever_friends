@@ -58,10 +58,10 @@ const displayPetByCategory = (data) => {
                                 div.innerHTML =
                                     `
                                     <div class="mt-8">
-                                    <div class="bg-white rounded-lg shadow-md w-72">
+                                    <div class="bg-white border-black rounded-lg shadow-md w-72">
                                     <img src="${pet.image}" alt="Pet Image" class="w-full h-48 object-cover rounded-t-lg">
                                     <div class="p-4">
-                                        <h4 class="text-lg font-semibold"><a href="pet_details.html?id=${pet.id}" class="text-indigo-600 hover:underline">${pet.name}</a></h4>
+                                        <h4 class="text-lg font-semibold"><a href="pet_details.html?id=${pet.id}" class=" hover:underline">${pet.name}</a></h4>
                                         <ul class="mt-2 space-y-1">
                                         <li class="text-gray-600">${cat}</li>
                                         <li class="text-gray-600">Price: <span>${(pet.price == 0) ? 'Free' : pet.price}</span></li>

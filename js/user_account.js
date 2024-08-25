@@ -17,7 +17,7 @@ const loadAccount = () => {
                     const div = document.createElement('div');
                     // div.classList.add("row", "g-0", "align-items-center")
                     div.innerHTML = `
-                    <div class="max-w-xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="max-w-xl mx-auto  overflow-hidden">
     <div class="p-5">
         <div class="flex items-center">
             <div class="w-20 h-20 rounded-full overflow-hidden mr-4">
@@ -32,8 +32,8 @@ const loadAccount = () => {
             </div>
         </div>
         <div class="mt-4">
-            <a href="edit_account.html?id=${user_id}" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center mr-2 mb-2">Edit Account</a>
-            <a href="change_password.html?id=${user_id}" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center mb-2">Change Password</a>
+            <a href="edit_account.html?id=${user_id}" class="btn text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2.5 text-center mr-2 mb-2">Edit Account</a>
+            <a href="change_password.html?id=${user_id}" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2.5 text-center mb-2">Change Password</a>
         </div>
     </div>
 </div>
